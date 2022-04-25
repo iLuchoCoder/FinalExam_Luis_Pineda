@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="ESPN Page Test" verbose="1">
+    <test name="Login Tests">
+
+        <parameter name="url" value="https://www.espnqa.com/?src=com&amp;_adblock=true&amp;espn=cloud"></parameter>
+        <parameter name="username" value="luis.pineda@globant.com"></parameter>
+        <parameter name="password" value="Veridisquo8"></parameter>
+
+        <classes>
+            <class name="login.LoginTests"></class>
+        </classes>
+    </test>
+</suite>
