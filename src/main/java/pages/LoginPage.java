@@ -68,7 +68,6 @@ public class LoginPage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(espnStrings.getElement1())));
     }
 
-
     public void waitTimeLabelLogInOut(){
         WebDriverWait wait = new WebDriverWait(driver,30);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(espnStrings.getElement9())));

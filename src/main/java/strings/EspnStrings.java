@@ -5,6 +5,7 @@ public class EspnStrings {
 
     public EspnStrings(){
         super();
+
         this.username = "luis.pineda@globant.com";
         this.password = "Veritas888";
         this.element1 = "//a[@id='global-user-trigger']";
