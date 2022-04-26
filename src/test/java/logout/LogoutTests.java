@@ -1,17 +1,14 @@
-package login;
+package logout;
 
 import base.BaseTests;
 import org.testng.annotations.Test;
 
-import pages.LoginPage;
-
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
 
-public class LoginTests extends BaseTests {
+public class LogoutTests extends BaseTests {
 
     @Test
-    public void testSuccessLogin(){
+    public void testSuccessLogout(){
         loginPage.clickLoginPreButton1();
         loginPage.clickLoginPreButton2();
         loginPage.setToiFrame();
@@ -20,10 +17,11 @@ public class LoginTests extends BaseTests {
         loginPage.clickLoginButton();
         loginPage.waitTimePreButton1();
         loginPage.clickLoginPreButton1();
-        assertTrue(loginPage.getOnPageAlert().contains("Welcome"),"Alert text is incorrect");
-        /*loginPage.clickLogoutPostButton();
-        loginPage.clickLoginButton();
+        loginPage.clickLogoutPostButton();
+        loginPage.clickLoginPreButton1();
         loginPage.waitTimePreButton1();
-        assertEquals(loginPage.getOnPageAlertLogOutSuccesfull(),"Welcome!","Alert text is incorrect");*/
+        loginPage.clickLoginPreButton1();
+        loginPage.waitTimeLabelLogInOut();
+        assertEquals(loginPage.getOnPageAlertLogOutSuccesfull(),"Log In","Title not matched");
     }
 }

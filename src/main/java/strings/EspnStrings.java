@@ -7,15 +7,15 @@ public class EspnStrings {
         super();
         this.username = "luis.pineda@globant.com";
         this.password = "Veridisquo8";
-        this.element1 = "Log In";
-        this.element2 = "";
-        this.element3 = "";
-        this.element4 = "";
-        this.element5 = "";
-        this.element6 = "";
-        this.element7 = "";
-        this.element8 = "";
-        this.element9 = "";
+        this.element1 = "//a[@id='global-user-trigger']";
+        this.element2 = "//li[@class='user hover']//div[@class='global-user']//div[@class='global-user-container']//ul[@class='account-management']//li//a[@data-affiliatename='espn'][normalize-space()='Log In']";
+        this.element3 = "#disneyid-iframe";
+        this.element4 = "//input[@placeholder='Username or Email Address']";
+        this.element5 = "//input[@placeholder='Password (case sensitive)']";
+        this.element6 = "//button[@aria-label='Log In']";
+        this.element7 = "//li[@class='user hover']//li[@class='display-user']";
+        this.element8 = "//li[@class='user hover']//div[@class='global-user']//div[@class='global-user-container']//ul[@class='account-management']//li//a[@class='small'][normalize-space()='Log Out']";
+        this.element9 = "//li[@class='user hover']//li[@class='display-user'][normalize-space()='Welcome!']";
         this.element10 = "";
         this.element11 = "";
     }
