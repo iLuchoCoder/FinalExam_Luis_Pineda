@@ -21,6 +21,7 @@ public class LoginPage {
     private By loginButton = By.xpath(espnStrings.getElement6());
     private By logoutButton = By.xpath(espnStrings.getElement7());
     private By logoutPostButton = By.xpath(espnStrings.getElement8());
+    private By labelWelcomeLogIn = By.xpath(espnStrings.getElement9());
 
     public LoginPage(WebDriver driver){
         this.driver = driver;
@@ -59,7 +60,7 @@ public class LoginPage {
     }
 
     public String getOnPageAlertLogOutSuccesfull(){
-        return driver.findElement(loginPreButton2).getText();
+        return driver.findElement(labelWelcomeLogIn).getTagName();
     }
 
     public void waitTimePreButton1(){
@@ -67,9 +68,10 @@ public class LoginPage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(espnStrings.getElement1())));
     }
 
+
     public void waitTimeLabelLogInOut(){
         WebDriverWait wait = new WebDriverWait(driver,30);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(espnStrings.getElement9())));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(espnStrings.getElement9())));
     }
 
 }

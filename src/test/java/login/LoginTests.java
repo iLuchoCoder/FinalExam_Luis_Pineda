@@ -3,9 +3,6 @@ package login;
 import base.BaseTests;
 import org.testng.annotations.Test;
 
-import pages.LoginPage;
-
-import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class LoginTests extends BaseTests {
@@ -21,9 +18,12 @@ public class LoginTests extends BaseTests {
         loginPage.waitTimePreButton1();
         loginPage.clickLoginPreButton1();
         assertTrue(loginPage.getOnPageAlert().contains("Welcome"),"Alert text is incorrect");
-        /*loginPage.clickLogoutPostButton();
-        loginPage.clickLoginButton();
-        loginPage.waitTimePreButton1();
-        assertEquals(loginPage.getOnPageAlertLogOutSuccesfull(),"Welcome!","Alert text is incorrect");*/
+    }
+
+    @Test
+    public void testSuccessLogout(){
+        loginPage.clickLogoutPostButton();
+        loginPage.waitTimeLabelLogInOut();
+        assertTrue(loginPage.getOnPageAlertLogOutSuccesfull().contains("button"),"Alert text is incorrect");
     }
 }

@@ -4,6 +4,7 @@ import base.BaseTests;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class LogoutTests extends BaseTests {
 
@@ -18,10 +19,7 @@ public class LogoutTests extends BaseTests {
         loginPage.waitTimePreButton1();
         loginPage.clickLoginPreButton1();
         loginPage.clickLogoutPostButton();
-        loginPage.clickLoginPreButton1();
-        loginPage.waitTimePreButton1();
-        loginPage.clickLoginPreButton1();
         loginPage.waitTimeLabelLogInOut();
-        assertEquals(loginPage.getOnPageAlertLogOutSuccesfull(),"Log In","Title not matched");
+        assertTrue(loginPage.getOnPageAlertLogOutSuccesfull().contains("button"),"Alert text is incorrect");
     }
 }
