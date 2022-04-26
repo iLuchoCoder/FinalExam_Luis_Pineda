@@ -2,12 +2,9 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import strings.EspnStrings;
-
-import java.util.concurrent.TimeUnit;
 
 public class LoginPage {
     private WebDriver driver;
@@ -22,6 +19,9 @@ public class LoginPage {
     private By logoutButton = By.xpath(espnStrings.getElement7());
     private By logoutPostButton = By.xpath(espnStrings.getElement8());
     private By labelWelcomeLogIn = By.xpath(espnStrings.getElement9());
+    private By profileButton = By.xpath(espnStrings.getElement10());
+    private By cancelAccountButton = By.xpath(espnStrings.getElement11());
+    private By submitCancelationButton = By.xpath(espnStrings.getElement12());
 
     public LoginPage(WebDriver driver){
         this.driver = driver;
@@ -45,6 +45,18 @@ public class LoginPage {
 
     public void clickLogoutPostButton(){
         driver.findElement(logoutPostButton).click();
+    }
+
+    public void clickProfileButton(){
+        driver.findElement(profileButton).click();
+    }
+
+    public void clickCancelAccountButton(){
+        driver.findElement(cancelAccountButton).click();
+    }
+
+    public void clickSubmitCancelationButton(){
+        driver.findElement(submitCancelationButton).click();
     }
 
     public void setToiFrame(){

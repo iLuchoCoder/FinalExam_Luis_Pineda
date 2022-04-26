@@ -1,13 +1,15 @@
 package strings;
 
 public class EspnStrings {
-    private String username, password, element1,element2,element3,element4,element5,element6,element7,element8,element9,element10, element11;
+    private String username, password, element1,element2,element3,element4,element5,element6,element7,element8,element9,element10, element11, element12;
 
     public EspnStrings(){
         super();
 
-        this.username = "luis.pineda@globant.com";
-        this.password = "Veritas888";
+        //this.username = "luis.pineda@globant.com";
+        //this.password = "Veritas888";
+        this.username = "testespn88@yopmail.com";
+        this.password = "Veridisquo8";
         this.element1 = "//a[@id='global-user-trigger']";
         this.element2 = "//li[@class='user hover']//div[@class='global-user']//div[@class='global-user-container']//ul[@class='account-management']//li//a[@data-affiliatename='espn'][normalize-space()='Log In']";
         this.element3 = "#disneyid-iframe";
@@ -17,8 +19,9 @@ public class EspnStrings {
         this.element7 = "//li[@class='user hover']//li[@class='display-user']";
         this.element8 = "//li[@class='user hover']//div[@class='global-user']//div[@class='global-user-container']//ul[@class='account-management']//li//a[@class='small'][normalize-space()='Log Out']";
         this.element9 = "//article[@id='sideLogin-right-rail']//button[@class='button med'][normalize-space()='Sign Up']";
-        this.element10 = "";
-        this.element11 = "";
+        this.element10 = "//li[@class='user hover']//div[@class='global-user']//div[@class='global-user-container']//ul[@class='account-management']//li//a[contains(text(),'ESPN Profile')]";
+        this.element11 = "//a[@id='cancel-account']";
+        this.element12 = "//button[@type='submit']";
     }
 
     public String getUsername() {
@@ -71,5 +74,9 @@ public class EspnStrings {
 
     public String getElement11() {
         return element11;
+    }
+
+    public String getElement12() {
+        return element12;
     }
 }
