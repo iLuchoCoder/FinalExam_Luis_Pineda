@@ -17,9 +17,16 @@ public class CancelAccountTests extends BaseTests {
         loginPage.waitTimePreButton1();
         loginPage.clickLoginPreButton1();
         loginPage.clickProfileButton();
+
         loginPage.setToiFrame();
+        loginPage.waitTimeCancelAccountButton();
+        loginPage.scrollDownCancelAccountButton();
+
         loginPage.clickCancelAccountButton();
-        loginPage.clickSubmitCancelationButton();
-        assertTrue(loginPage.getOnPageAlertLogOutSuccesfull().contains("button"),"Alert text is incorrect");
+
+        loginPage.clickSubmitCancellationButton();
+        loginPage.waitTimePreButton1();
+        loginPage.clickLoginPreButton1();
+        assertTrue(loginPage.getOnPageAlert().contains("Welcome"),"Alert text is incorrect");
     }
 }

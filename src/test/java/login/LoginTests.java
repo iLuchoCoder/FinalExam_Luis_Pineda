@@ -24,6 +24,6 @@ public class LoginTests extends BaseTests {
     public void testSuccessLogout(){
         loginPage.clickLogoutPostButton();
         loginPage.waitTimeLabelLogInOut();
-        assertTrue(loginPage.getOnPageAlertLogOutSuccesfull().contains("button"),"Alert text is incorrect");
+        assertTrue(loginPage.getOnPageAlertLogOutSuccessful().contains("button"),"Alert text is incorrect");
     }
 }

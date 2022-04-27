@@ -1,10 +1,15 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import strings.EspnStrings;
+
+import java.util.concurrent.TimeUnit;
+
 
 public class LoginPage {
     private WebDriver driver;
@@ -23,66 +28,83 @@ public class LoginPage {
     private By cancelAccountButton = By.xpath(espnStrings.getElement11());
     private By submitCancelationButton = By.xpath(espnStrings.getElement12());
 
-    public LoginPage(WebDriver driver){
+    public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void setUsername(){
+    public void setUsername() {
         driver.findElement(usernameField).sendKeys(espnStrings.getUsername());
     }
 
-    public void setPassword(){
+    public void setPassword() {
         driver.findElement(passwordField).sendKeys(espnStrings.getPassword());
     }
 
-    public void clickLoginPreButton1(){
+    public void clickLoginPreButton1() {
         driver.findElement(loginPreButton1).click();
     }
 
-    public void clickLoginPreButton2(){
+    public void clickLoginPreButton2() {
         driver.findElement(loginPreButton2).click();
     }
 
-    public void clickLogoutPostButton(){
+    public void clickLogoutPostButton() {
         driver.findElement(logoutPostButton).click();
     }
 
-    public void clickProfileButton(){
+    public void clickProfileButton() {
         driver.findElement(profileButton).click();
     }
 
-    public void clickCancelAccountButton(){
-        driver.findElement(cancelAccountButton).click();
+    public void clickCancelAccountButton() {
+        boolean staleElement = true;
+        while(staleElement) {
+            try {
+                driver.findElement(cancelAccountButton).click();
+                staleElement = false;
+            } catch (StaleElementReferenceException e) {
+                staleElement = true;
+            }
+        }
     }
 
-    public void clickSubmitCancelationButton(){
+    public void clickSubmitCancellationButton() {
         driver.findElement(submitCancelationButton).click();
     }
 
-    public void setToiFrame(){
+    public void setToiFrame() {
         driver.switchTo().frame(driver.findElement(loginIframe));
     }
 
-    public void clickLoginButton(){
+    public void clickLoginButton() {
         driver.findElement(loginButton).click();
     }
 
-    public String getOnPageAlert(){
+    public String getOnPageAlert() {
         return driver.findElement(logoutButton).getText();
     }
 
-    public String getOnPageAlertLogOutSuccesfull(){
+    public String getOnPageAlertLogOutSuccessful() {
         return driver.findElement(labelWelcomeLogIn).getTagName();
     }
 
-    public void waitTimePreButton1(){
-        WebDriverWait wait = new WebDriverWait(driver,30);
+    public void waitTimePreButton1() {
+        WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(espnStrings.getElement1())));
     }
 
-    public void waitTimeLabelLogInOut(){
-        WebDriverWait wait = new WebDriverWait(driver,30);
+    public void waitTimeLabelLogInOut() {
+        WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(espnStrings.getElement9())));
+    }
+
+    public void waitTimeCancelAccountButton() {
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(espnStrings.getElement11())));
+    }
+
+    public void scrollDownCancelAccountButton() {
+        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,800)", espnStrings.getElement11());
     }
 
 }
